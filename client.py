@@ -1,3 +1,6 @@
+#Script to request connection to the server.
+#EPastore, 04/01/2026
+
 import socket
 
 with socket.socket(socket.AF_INET,socket.SOCK_STREAM) as s:

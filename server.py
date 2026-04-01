@@ -1,4 +1,6 @@
 import socket
+#Script to listen for connections and return string to client.
+#EPastore, 04/01/2026
 
 with socket.socket(socket.AF_INET,socket.SOCK_STREAM) as s:
 
