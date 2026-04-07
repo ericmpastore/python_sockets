@@ -1,20 +1,21 @@
 import socket
+from PIL import Image
 
 with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
 
     s.connect((socket.gethostname(),4571))
 
-    custom_file = open('files\received_file.txt','wb')
+    # custom_file = open('files\received_file.txt','wb')
+    with open('files/received_image.jpg','wb') as image_file:
 
-    while True:
 
-        data = s.recv(40960)
+        while True:
 
-        if not data:
-            print("No messages from server")
-            break
+            data = s.recv(40960)
 
-        custom_file.write(data)
-        print('Data sent')
+            if not data:
+                print("No messages from server")
+                break
 
-    custom_file.close()
+            image_file.write(data)
+            print('Data sent')
